@@ -1,0 +1,17 @@
+@model Book
+<div id="book_@Model.Id" class="card mb-3">
+    <div class="row p-4 shadow-sm">
+        
+        <div class="col-md-4 ">
+            <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.Id" >
+                <img src="~/img/@Model.Image" width="200" alt="" class="img-fluid rounded" />
+             </a>
+        </div>
+        <div class="col-md-8">
+            <h1 class="card-title">@Model.Title</h1>
+            <p class="card-text">@Model.Author</p>
+            <p class="card-text">@Model.Description</p>
+       </div>
+    </div>
+    
+  </div>

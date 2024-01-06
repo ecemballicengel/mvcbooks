@@ -1,0 +1,24 @@
+﻿@model List<Book>
+    @section Header{
+        @await Html.PartialAsync("_Header")
+    }
+    <div class="row">
+        @foreach(var book in Model){
+            
+            <div class="col-4 mb-4 my-3">
+                <div class="card m-auto shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="height: 38rem;">
+                    <img src="~/img/@book.Image" class="card-image-top m-auto "   width="200" height="300" alt="">
+                    <div class="card-body" style="height:fit-content;" >
+                        <h5 class="card-title" style="height:fit-content;">@book.Title</h5>
+                        <p class="card-text">@book.Author</p>
+                        <p class="card-text" style="max-height: 100px; overflow-y: auto;">@book.Description</p>
+                    </div>
+                    <div class="card-footer" style="background-color: white; border: none; text-align: right;">
+                        <a class="btn btn-success" asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">Detay</a>
+
+                    </div>
+                </div>
+            </div>
+    
+        }
+    </div>
